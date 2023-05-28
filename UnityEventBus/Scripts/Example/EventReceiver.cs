@@ -35,6 +35,8 @@ public class EventReceiver : MonoBehaviour, IEventReceiver<RedEvent>, IEventRece
 
     #region IEventReceiver
 
+    public UniqueId Id { get; } = new UniqueId();
+
     public void OnEvent(RedEvent @event)
     {
         transform.position += @event.MoveDelta;
