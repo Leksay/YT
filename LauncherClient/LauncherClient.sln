@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LauncherClient", "LauncherClient\LauncherClient.csproj", "{C370AFCF-B426-4129-A789-9C459C6ABCE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{BBCE988D-B99C-496A-BDE0-0C617147EE8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crc32HashCalculator", "Crc32HashCalculator\Crc32HashCalculator.csproj", "{BFC1C096-A597-421C-8359-41EA89705595}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C370AFCF-B426-4129-A789-9C459C6ABCE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C370AFCF-B426-4129-A789-9C459C6ABCE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C370AFCF-B426-4129-A789-9C459C6ABCE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C370AFCF-B426-4129-A789-9C459C6ABCE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBCE988D-B99C-496A-BDE0-0C617147EE8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBCE988D-B99C-496A-BDE0-0C617147EE8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBCE988D-B99C-496A-BDE0-0C617147EE8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBCE988D-B99C-496A-BDE0-0C617147EE8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC1C096-A597-421C-8359-41EA89705595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC1C096-A597-421C-8359-41EA89705595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC1C096-A597-421C-8359-41EA89705595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC1C096-A597-421C-8359-41EA89705595}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

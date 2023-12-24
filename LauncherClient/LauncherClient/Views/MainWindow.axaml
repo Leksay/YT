@@ -1,0 +1,96 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:LauncherClient.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="350"
+        Width="600"
+        Height="350"
+        CanResize="False"
+        x:Class="LauncherClient.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Leksay's Launcher"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        TransparencyLevelHint="AcrylicBlur">
+    <!-- -->
+    <!-- <Design.DataContext> -->
+    <!--     <vm:MainWindowViewModel/> -->
+    <!-- </Design.DataContext> -->
+
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="None"
+                    TintColor="{StaticResource BackgroundColor}"
+                    TintOpacity="1"
+                    MaterialOpacity="0.25" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        
+        <DockPanel>
+            <Label DockPanel.Dock="Top"
+                   HorizontalAlignment="Center"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Content="LEKSAY'S DEVELOPMENT"
+                   Foreground="White"
+                   Margin="0,20,0,0"/>
+            
+            <Panel DockPanel.Dock="Top"
+                   Height="160">
+                <!-- todo: set leksay's development logo -->
+                <Image Margin="20" Height="128"
+                       Source="../Assets/background.png"></Image>
+                <Button
+                    Command="{Binding OpenLogsCommand}"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    CornerRadius="4"
+                    Margin="0, 5, 10, 10"
+                    FontSize="10"
+                    Content="Logs"/>
+            </Panel>
+
+            <Border DockPanel.Dock="Bottom" CornerRadius="15">
+                <Panel>
+                    <ExperimentalAcrylicBorder IsHitTestVisible="False" CornerRadius="15">
+                        <ExperimentalAcrylicBorder.Material>
+                            <ExperimentalAcrylicMaterial
+                                BackgroundSource="None"
+                                TintColor="{StaticResource BackgroundColor}"
+                                TintOpacity="1"
+                                MaterialOpacity="0.15" />
+                        </ExperimentalAcrylicBorder.Material>
+                    </ExperimentalAcrylicBorder>
+
+                    <Label Content="{Binding MessageLabel}" HorizontalAlignment="Center" Margin="5" Foreground="White"/>
+                    <ProgressBar Value="{Binding Progress}"
+                                 Height="10"
+                                 Minimum="0"
+                                 Maximum="1"
+                                 Margin="0,35,5,15"
+                                 VerticalAlignment="Top"
+                                 HorizontalAlignment="Stretch"
+                                 Foreground="{StaticResource ProgressBarColor}"/>
+                    
+                    <Button CornerRadius="10"
+                            Command="{Binding StartGameCommand}"
+                            IsEnabled="{Binding CanStartGame}"
+                            Margin="0,5,10,10"
+                            Content="PLAY"
+                            Foreground="White"
+                            Background="{StaticResource PlayButtonBackgroundColor}"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Right"
+                            FontSize="25"
+                            FontWeight="Bold"
+                            Width="150"
+                            HorizontalContentAlignment="Center"/>
+                </Panel>
+            </Border>
+        </DockPanel>
+    </Panel>
+</Window>

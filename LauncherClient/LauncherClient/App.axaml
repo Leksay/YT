@@ -1,0 +1,23 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="LauncherClient.App"
+             xmlns:local="using:LauncherClient"
+             RequestedThemeVariant="Default">
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BackgroundColor">#6622CC</Color>
+            <Color x:Key="ProgressBarColor">#65AAFB</Color>
+            <Color x:Key="PlayButtonBackgroundColor">#34CFBB</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
