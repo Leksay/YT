@@ -17,7 +17,7 @@ public class AppConfig
 
     public const string DefaultHashFileName = "GameHash.json";
 
-    public const string DefaultBaseUri = "http://localhost:127/";
+    public const string DefaultBaseUri = "http://localhost:128/";
 
     private const string DefaultDownloadFolderName = DefaultGameFolderName;
 

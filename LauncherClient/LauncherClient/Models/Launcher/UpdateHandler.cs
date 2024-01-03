@@ -96,8 +96,8 @@ public class UpdateHandler
 
     private bool HandleFiles(ref HashDifference hashDifference)
     {
-        return !FilesUtils.RemoveFiles(hashDifference.RemovedFiles, _appConfig.GamePath)
-               && !FilesUtils.MoveFiles(_appConfig.TempDownloadFolder, _appConfig.GamePath);
+        return FilesUtils.RemoveFiles(hashDifference.RemovedFiles, _appConfig.GamePath)
+               && FilesUtils.MoveFiles(_appConfig.TempDownloadFolder, _appConfig.GamePath);
     }
 
     private HashDifference GetHashDifferences(ProjectHashData localHashData, ApiHashDataModel remoteHash)
@@ -139,7 +139,7 @@ public class UpdateHandler
         _uiDispatcher.ExecuteOnUiThread(() =>
         {
             _viewModel.Progress = normalizedProgress;
-            _viewModel.MessageLabel = message;
+            _viewModel.Message = message;
         });
     }
 

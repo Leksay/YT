@@ -16,7 +16,7 @@ public class MainWindowViewModel : ViewModelBase
 
     internal bool CanStartGame
     {
-        get => _canStartGame;
+        get =>  _canStartGame;
         set => this.RaiseAndSetIfChanged(ref _canStartGame, value);
     }
 
@@ -26,10 +26,10 @@ public class MainWindowViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _progress, value);
     }
 
-    internal string MessageLabel
+    internal string Message
     {
-        get => _messageLabel;
-        set => this.RaiseAndSetIfChanged(ref _messageLabel, value);
+        get => _message;
+        set => this.RaiseAndSetIfChanged(ref _message, value);
     }
 
     internal bool FilesIsReady
@@ -47,7 +47,7 @@ public class MainWindowViewModel : ViewModelBase
     private readonly IGameStarter _gameStarter;
 
     private double _progress;
-    private string _messageLabel;
+    private string _message;
     private bool _filesIsReady;
     private bool _canStartGame;
 
@@ -58,11 +58,11 @@ public class MainWindowViewModel : ViewModelBase
         _gameStarter = Locator.Current.GetService<IGameStarter>();
         if (_gameStarter is null)
         {
-            Logger.Error($"Can.t resolve {typeof(IGameStarter)}");
+            Logger.Error($"Can't resolve {typeof(IGameStarter)}");
             throw new NullReferenceException($"Can't resolve {typeof(IGameStarter)}");
         }
 
-        var isGameReady = this.WhenAnyValue(
+        IObservable<bool> isGameReady = this.WhenAnyValue(
             property1: viewModel => viewModel.FilesIsReady,
             property2: viewModel => viewModel._gameStarter.GameIsStarted,
             selector: (filesIsReady, gameIsStarted) => filesIsReady && !gameIsStarted

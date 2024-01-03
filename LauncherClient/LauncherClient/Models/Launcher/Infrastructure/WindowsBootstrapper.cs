@@ -25,10 +25,6 @@ public static class WindowsBootstrapper
         RegisterAs<UpdateHandler, UpdateHandler>(new UpdateHandler());
     }
 
-    #endregion
-
-    #region service methods
-
     public static MainWindow BuildViews()
     {
         var mainViewModel = Locator.Current.GetService<MainWindowViewModel>();
@@ -40,6 +36,10 @@ public static class WindowsBootstrapper
 
         return mainView;
     }
+
+    #endregion
+
+    #region service methods
 
     private static void RegisterAs<TInstance, TInterface>(TInstance instance) where TInstance : class, TInterface
     {

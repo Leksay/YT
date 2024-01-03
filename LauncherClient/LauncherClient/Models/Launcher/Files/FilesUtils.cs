@@ -20,11 +20,8 @@ public static class FilesUtils
 
     public static void SaveHash(ProjectHashData hashData, string hashFilePath)
     {
-        Task.Run(() =>
-        {
-            string serializedHash = JsonConvert.SerializeObject(hashData);
-            File.WriteAllText(hashFilePath, serializedHash);
-        });
+        string serializedHash = JsonConvert.SerializeObject(hashData);
+        File.WriteAllText(hashFilePath, serializedHash);
     }
 
     public static void SaveTextFile(string path, string text)
